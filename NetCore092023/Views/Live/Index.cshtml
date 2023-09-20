@@ -1,0 +1,35 @@
+﻿@model List<LiveModel>
+
+@{
+    ViewData["Title"] = "Liste des lives";
+}
+
+<h1>Ici la liste de vos lives préférés</h1>
+
+<table class="tabletoto">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Url</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var live in Model)
+        {
+            <tr>
+                <td>@live.Id</td>
+                <td>@live.Nom</td>
+                <td>@live.Description</td>
+                <td><a target="_blank" class="btn btn-primary" href="@live.Url">Cliquez ici</a></td>
+            </tr>   
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        alert("coucou les amis ! ");
+    </script>
+}
